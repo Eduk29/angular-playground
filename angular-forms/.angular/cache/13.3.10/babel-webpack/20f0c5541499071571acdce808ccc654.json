@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const PageNavigationConfig = [{\n  name: 'Reactive Form',\n  routerLink: ['../reactive-forms']\n}, {\n  name: 'Template Driven Form',\n  routerLink: ['../template-driven-forms']\n}];","map":null,"metadata":{},"sourceType":"module"}

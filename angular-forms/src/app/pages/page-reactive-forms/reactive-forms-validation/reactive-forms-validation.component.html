@@ -1,0 +1,80 @@
+<div class="container mt-5">
+  <app-page-title title="Form Validation with Custom Validators"></app-page-title>
+
+  <form class="row align-items-center" [formGroup]="validationForm" (ngSubmit)="formSubmit()">
+    <div class="row w-100">
+      <mat-form-field class="col-4">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Enter your name" formControlName="name" [required]="!!name">
+        <mat-error *ngIf="!!name?.errors?.required">This field is required!</mat-error>
+        <mat-error *ngIf="!!name?.errors?.minlength">Should be greater than 4 carcters!</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-4">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="Enter your last name" formControlName="lastname" [required]="!!email">
+        <mat-error *ngIf="!!lastname?.errors?.required">This field is required!</mat-error>
+        <mat-error *ngIf="!!lastname?.errors?.minlength">Should be greater than 4 carcters!</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-2">
+        <mat-label>Birthday</mat-label>
+        <input matInput type="date" placeholder="Enter your birthday" formControlName="birthday">
+      </mat-form-field>
+
+      <mat-form-field class="col-2">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" placeholder="Enter your age" formControlName="age">
+      </mat-form-field>
+    </div>
+
+    <div class="row w-100" formGroupName="contacts">
+      <mat-form-field class="col-6">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" placeholder="Enter your address" formControlName="address">
+      </mat-form-field>
+
+      <mat-form-field class="col-2">
+        <mat-label>State</mat-label>
+        <input matInput type="text" placeholder="Enter your state" formControlName="state">
+      </mat-form-field>
+
+      <mat-form-field class="col-2">
+        <mat-label>City</mat-label>
+        <input matInput type="text" placeholder="Enter your city" formControlName="city">
+      </mat-form-field>
+
+      <mat-form-field class="col-2">
+        <mat-label>Zip Code</mat-label>
+        <input matInput type="text" placeholder="Enter your zip code" formControlName="zipCode">
+      </mat-form-field>
+    </div>
+
+    <div class="row w-100" formGroupName="contacts">
+      <mat-form-field class="col-6">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Enter your email" formControlName="email" email [required]="!!email">
+        <mat-error *ngIf="!!email?.errors?.required">This field is required!</mat-error>
+        <mat-error *ngIf="!!email?.invalid">Enter a valid email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-3">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" placeholder="Enter your phone" formControlName="phone" [required]="!!phone">
+        <mat-error *ngIf="!!phone?.errors?.required">This field is required!</mat-error>
+        <mat-error *ngIf="!!phone?.errors?.minlength">Should be greater than 11 carcters!</mat-error>
+        <mat-error *ngIf="!!phone?.errors?.invalidPhone">Enter a valid phone</mat-error>
+        <mat-error *ngIf="!!phone?.errors?.invalidPreffix">Enter a valid preffix</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="col-3">
+        <mat-label>Cell Phone</mat-label>
+        <input matInput type="text" placeholder="Enter your cell phone" formControlName="cellphone">
+      </mat-form-field>
+    </div>
+
+    <div class="row d-flex w-100 justify-content-end">
+      <button type="submit" [disabled]="IsButtonDisabled" mat-button color="primary">Submit</button>
+    </div>
+  </form>
+</div>

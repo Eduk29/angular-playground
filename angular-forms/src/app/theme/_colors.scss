@@ -1,0 +1,16 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+// TODO: AJUSTAR CORES
+$poc-theme-primary: mat-palette($mat-indigo);
+$poc-theme-accent: mat-palette($mat-light-blue);
+$poc-theme-warn: mat-palette($mat-red, A700, 400, 900);
+
+$poc-theme: mat-light-theme(
+  $poc-theme-primary,
+  $poc-theme-accent,
+  $poc-theme-warn
+);
+
+@include angular-material-theme($poc-theme);

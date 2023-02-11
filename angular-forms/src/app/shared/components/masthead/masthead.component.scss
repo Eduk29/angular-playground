@@ -1,0 +1,24 @@
+@import "../../../theme/base.scss";
+
+$primary: map-get($poc-theme, primary);
+$accent: map-get($poc-theme, accent);
+$warn: map-get($poc-theme, warn);
+$background: map-get($poc-theme, background);
+$foreground: map-get($poc-theme, foreground);
+
+.masthead {
+  background-color: mat-color($primary, A100);
+  height: 35vh;
+  min-height: 25vh;
+  width: 100%;
+}
+
+.mat-display-1,
+.mat-subtitle-1,
+.icon {
+  color: white;
+}
+
+.icon {
+  cursor: pointer;
+}

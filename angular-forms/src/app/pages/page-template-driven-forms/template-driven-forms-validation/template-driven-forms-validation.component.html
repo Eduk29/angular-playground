@@ -1,0 +1,38 @@
+<section class="container mt-5">
+  <app-page-title title="Simple Inputs"></app-page-title>
+
+  <form class="row align-items-center" #userForm="ngForm" (ngSubmit)="formSubmit()">
+
+    <mat-form-field class="col-4">
+      <mat-label>Username</mat-label>
+      <input matInput id="username" name="username" type="text" placeholder="Enter your username" minlength="4"
+        [(ngModel)]="user.login" #username="ngModel" required>
+      <mat-error *ngIf="!!username?.errors?.required">This field is required!</mat-error>
+      <mat-error *ngIf="!!username?.errors?.minlength">Username must contains more than 4 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-4">
+      <mat-label>Password</mat-label>
+      <input appPasswordValidator matInput name="password" type="password" placeholder="Enter your password"
+        [(ngModel)]="user.password" #password="ngModel" minlength="4" required>
+      <mat-error *ngIf="!!password?.errors?.required">This field is required!</mat-error>
+      <mat-error *ngIf="!!password?.errors?.minlength">Password must contains more than 4 characters</mat-error>
+      <mat-error *ngIf="!!password?.errors?.passwordValidator">Password should be different from 1234</mat-error>
+    </mat-form-field>
+
+    <div class="col-2">
+      <button mat-button type="submit" color="primary">Submit</button>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="d-flex flex-row col-4">
+      <p class="m-0 px-2">Username from input: </p>
+      <p class="m-0 px-2">{{ user.login }}</p>
+    </div>
+    <div class="d-flex flex-row col-4">
+      <p class="m-0 px-2">Password from input: </p>
+      <p class="m-0 px-2">{{ user.password }}</p>
+    </div>
+  </div>
+</section>

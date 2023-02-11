@@ -1,0 +1,18 @@
+<app-masthead [mastheadData]="mastheadData" [displayBack]="true"></app-masthead>
+
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Simple Input">
+    <ng-template matTabContent>
+      <app-reactive-form-simple-input></app-reactive-form-simple-input>
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Group Inputs">
+    <app-reactive-form-group-inputs></app-reactive-form-group-inputs>
+  </mat-tab>
+  <mat-tab label="Nested Inputs">
+    <app-reactive-forms-nested-inputs></app-reactive-forms-nested-inputs>
+  </mat-tab>
+  <mat-tab label="Form Validation">
+    <app-reactive-forms-validation></app-reactive-forms-validation>
+  </mat-tab>
+</mat-tab-group>

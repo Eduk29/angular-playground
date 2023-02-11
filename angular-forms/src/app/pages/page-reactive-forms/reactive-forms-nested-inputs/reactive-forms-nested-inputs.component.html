@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <app-page-title title="Nested Inputs"></app-page-title>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmitAddress()">
+    <div class="row">
+      <mat-form-field class="col-4">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Enter your name" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="col-4">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" placeholder="Enter your name" formControlName="lastname">
+      </mat-form-field>
+
+      <mat-form-field class="col-4">
+        <mat-label>Birthday</mat-label>
+        <input matInput type="date" placeholder="Enter your Birthday" formControlName="birthday">
+      </mat-form-field>
+    </div>
+
+    <div class="row" formGroupName="address">
+      <mat-form-field class="col-3">
+        <mat-label>Street</mat-label>
+        <input matInput type="text" placeholder="Enter your street name" formControlName="street">
+      </mat-form-field>
+
+      <mat-form-field class="col-2">
+        <mat-label>Number</mat-label>
+        <input matInput type="number" placeholder="Enter your house number" formControlName="number">
+      </mat-form-field>
+
+      <mat-form-field class="col-3">
+        <mat-label>State</mat-label>
+        <input matInput type="text" placeholder="Enter your state name" formControlName="state">
+      </mat-form-field>
+
+      <mat-form-field class="col-4">
+        <mat-label>Country</mat-label>
+        <input matInput type="text" placeholder="Enter your country name" formControlName="country">
+      </mat-form-field>
+    </div>
+
+    <div class="row justify-content-end">
+      <button type="submit" mat-button color="primary">Submit</button>
+    </div>
+
+  </form>
+</div>

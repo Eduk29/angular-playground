@@ -1,0 +1,19 @@
+<section class="container mt-5">
+  <app-page-title title="Simple Inputs"></app-page-title>
+
+  <form class="row align-items-center" [formGroup]="simpleInputForm" (ngSubmit)="formSubmit()">
+    <mat-form-field class="col-4">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Enter your name" formControlName="inputName">
+    </mat-form-field>
+
+    <div class="col-2">
+      <button mat-button type="submit" color="primary">Submit</button>
+    </div>
+
+    <div class="d-flex flex-row col-4">
+      <p class="m-0 px-2">Value from input: </p>
+      <p class="m-0 px-2">{{ nameFromInput }}</p>
+    </div>
+  </form>
+</section>

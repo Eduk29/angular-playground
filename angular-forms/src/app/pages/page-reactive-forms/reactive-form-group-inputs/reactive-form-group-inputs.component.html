@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <app-page-title title="Grouped Inputs"></app-page-title>
+
+  <form class="row align-items-center" [formGroup]="groupInputForm" (ngSubmit)="formSubmit()">
+    <mat-form-field class="col-4">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" placeholder="Enter your name" formControlName="inputName">
+    </mat-form-field>
+
+    <mat-form-field class="col-4">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" placeholder="Enter your name" formControlName="inputLastName">
+    </mat-form-field>
+
+    <div class="col-2">
+      <button mat-button type="submit" color="primary">Submit</button>
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-4">
+      <p class="m-0 px-2">Name from input: </p>
+      <p class="m-0 px-2">{{ groupInputForm?.get('inputName')?.value }}</p>
+    </div>
+    <div class="col-4">
+      <p class="m-0 px-2">Last Name from input: </p>
+      <p class="m-0 px-2">{{ groupInputForm?.get('inputLastName')?.value }}</p>
+    </div>
+  </div>
+</div>

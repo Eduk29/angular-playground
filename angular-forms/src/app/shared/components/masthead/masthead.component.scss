@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import "../../../theme/base.scss";
 
 $primary: map-get($poc-theme, primary);
@@ -7,7 +8,7 @@ $background: map-get($poc-theme, background);
 $foreground: map-get($poc-theme, foreground);
 
 .masthead {
-  background-color: mat-color($primary, A100);
+  background-color: mat.get-color-from-palette($primary, A100);
   height: 35vh;
   min-height: 25vh;
   width: 100%;

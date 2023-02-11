@@ -1,11 +1,3 @@
-@import "../../theme/base.scss";
-
-$primary: map-get($poc-theme, primary);
-$accent: map-get($poc-theme, accent);
-$warn: map-get($poc-theme, warn);
-$background: map-get($poc-theme, background);
-$foreground: map-get($poc-theme, foreground);
-
 a:hover {
   text-decoration: none;
 }

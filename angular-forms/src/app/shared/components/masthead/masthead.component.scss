@@ -1,14 +1,5 @@
-@use '@angular/material' as mat;
-@import "../../../theme/base.scss";
-
-$primary: map-get($poc-theme, primary);
-$accent: map-get($poc-theme, accent);
-$warn: map-get($poc-theme, warn);
-$background: map-get($poc-theme, background);
-$foreground: map-get($poc-theme, foreground);
-
 .masthead {
-  background-color: mat.get-color-from-palette($primary, A100);
+  background-color: aliceblue;
   height: 35vh;
   min-height: 25vh;
   width: 100%;
@@ -17,7 +8,7 @@ $foreground: map-get($poc-theme, foreground);
 .mat-display-1,
 .mat-subtitle-1,
 .icon {
-  color: white;
+  color: black;
 }
 
 .icon {

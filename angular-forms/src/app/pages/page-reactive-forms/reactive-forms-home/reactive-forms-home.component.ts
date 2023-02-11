@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormControl,
+  UntypedFormGroup,
   Validators,
 } from '@angular/forms';
 import { PagesMastheadConfig } from 'src/app/configs/pages-masthead.config';
@@ -17,8 +17,8 @@ export class ReactiveFormsHomeComponent {
   public mastheadData: IMasthead =
     PagesMastheadConfig.reactiveFormsMastheadData;
 
-  name = new FormControl('');
-  userForm: FormGroup;
+  name = new UntypedFormControl('');
+  userForm: UntypedFormGroup;
   userProfileForm = this.formBuilder.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -29,20 +29,20 @@ export class ReactiveFormsHomeComponent {
       zip: [''],
     }),
   });
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+  profileForm = new UntypedFormGroup({
+    firstName: new UntypedFormControl(''),
+    lastName: new UntypedFormControl(''),
   });
-  addressForm = new FormGroup({
-    address: new FormGroup({
-      street: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl(''),
+  addressForm = new UntypedFormGroup({
+    address: new UntypedFormGroup({
+      street: new UntypedFormControl(''),
+      city: new UntypedFormControl(''),
+      state: new UntypedFormControl(''),
+      zip: new UntypedFormControl(''),
     }),
   });
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     this.userForm = this.formBuilder.group({
       firstName: [''],
       lastName: [''],

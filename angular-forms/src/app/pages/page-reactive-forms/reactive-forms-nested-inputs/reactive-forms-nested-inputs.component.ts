@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reactive-forms-nested-inputs.component.scss'],
 })
 export class ReactiveFormsNestedInputsComponent implements OnInit {
-  public userForm: FormGroup;
+  public userForm: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     this.userForm = this.createForm(formBuilder);
   }
 
@@ -21,16 +21,16 @@ export class ReactiveFormsNestedInputsComponent implements OnInit {
     console.log('Form submitted: ', this.userForm.value);
   }
 
-  private createForm(fb: FormBuilder): FormGroup {
+  private createForm(fb: UntypedFormBuilder): UntypedFormGroup {
     return fb.group({
-      name: new FormControl(),
-      lastname: new FormControl(),
-      birthday: new FormControl(),
-      address: new FormGroup({
-        street: new FormControl(),
-        number: new FormControl(),
-        state: new FormControl(),
-        country: new FormControl()
+      name: new UntypedFormControl(),
+      lastname: new UntypedFormControl(),
+      birthday: new UntypedFormControl(),
+      address: new UntypedFormGroup({
+        street: new UntypedFormControl(),
+        number: new UntypedFormControl(),
+        state: new UntypedFormControl(),
+        country: new UntypedFormControl()
       })
     })
   }

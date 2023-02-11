@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-group-inputs',
@@ -7,12 +7,12 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./reactive-form-group-inputs.component.scss'],
 })
 export class ReactiveFormGroupInputsComponent implements OnInit {
-  public groupInputForm: FormGroup;
+  public groupInputForm: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     this.groupInputForm = formBuilder.group({
-      inputName: new FormControl(''),
-      inputLastName: new FormControl(''),
+      inputName: new UntypedFormControl(''),
+      inputLastName: new UntypedFormControl(''),
     });
   }
 

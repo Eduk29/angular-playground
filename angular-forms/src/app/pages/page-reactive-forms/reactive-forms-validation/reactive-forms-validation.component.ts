@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { phoneValidator } from '../../../shared/validators/phone.validator';
 
@@ -9,30 +9,30 @@ import { phoneValidator } from '../../../shared/validators/phone.validator';
   styleUrls: ['./reactive-forms-validation.component.scss'],
 })
 export class ReactiveFormsValidationComponent {
-  public validationForm: FormGroup;
+  public validationForm: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: UntypedFormBuilder) {
     this.validationForm = formBuilder.group({
-      name: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      lastname: new FormControl('', [
+      name: new UntypedFormControl('', [Validators.required, Validators.minLength(4)]),
+      lastname: new UntypedFormControl('', [
         Validators.required,
         Validators.minLength(4),
       ]),
-      birthday: new FormControl(''),
-      age: new FormControl(''),
+      birthday: new UntypedFormControl(''),
+      age: new UntypedFormControl(''),
       contacts: formBuilder.group(
         {
-          address: new FormControl(''),
-          state: new FormControl(''),
-          city: new FormControl(''),
-          zipCode: new FormControl(''),
-          email: new FormControl(''),
-          phone: new FormControl('', [
+          address: new UntypedFormControl(''),
+          state: new UntypedFormControl(''),
+          city: new UntypedFormControl(''),
+          zipCode: new UntypedFormControl(''),
+          email: new UntypedFormControl(''),
+          phone: new UntypedFormControl('', [
             Validators.required,
             Validators.minLength(10),
             phoneValidator,
           ]),
-          cellphone: new FormControl(''),
+          cellphone: new UntypedFormControl(''),
         },
         { updateOn: 'blur' }
       ),

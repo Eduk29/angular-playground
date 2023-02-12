@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 import { phoneValidator } from '../../../shared/validators/phone.validator';
 
@@ -9,30 +15,33 @@ import { phoneValidator } from '../../../shared/validators/phone.validator';
   styleUrls: ['./reactive-forms-validation.component.scss'],
 })
 export class ReactiveFormsValidationComponent {
-  public validationForm: UntypedFormGroup;
+  public validationForm: FormGroup;
 
-  constructor(private formBuilder: UntypedFormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.validationForm = formBuilder.group({
-      name: new UntypedFormControl('', [Validators.required, Validators.minLength(4)]),
-      lastname: new UntypedFormControl('', [
+      name: new FormControl<string | null>(null, [
         Validators.required,
         Validators.minLength(4),
       ]),
-      birthday: new UntypedFormControl(''),
-      age: new UntypedFormControl(''),
+      lastname: new FormControl<string | null>(null, [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      birthday: new FormControl<string | null>(''),
+      age: new FormControl<string | null>(''),
       contacts: formBuilder.group(
         {
-          address: new UntypedFormControl(''),
-          state: new UntypedFormControl(''),
-          city: new UntypedFormControl(''),
-          zipCode: new UntypedFormControl(''),
-          email: new UntypedFormControl(''),
-          phone: new UntypedFormControl('', [
+          address: new FormControl<string | null>(''),
+          state: new FormControl<string | null>(''),
+          city: new FormControl<string | null>(''),
+          zipCode: new FormControl<string | null>(''),
+          email: new FormControl<string | null>(''),
+          phone: new FormControl<string | null>('', [
             Validators.required,
             Validators.minLength(10),
             phoneValidator,
           ]),
-          cellphone: new UntypedFormControl(''),
+          cellphone: new FormControl<string | null>(''),
         },
         { updateOn: 'blur' }
       ),

@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, AbstractControl } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-simple-input',
@@ -7,12 +12,12 @@ import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, AbstractContr
   styleUrls: ['./reactive-form-simple-input.component.scss'],
 })
 export class ReactiveFormSimpleInputComponent {
-  public simpleInputForm: UntypedFormGroup;
+  public simpleInputForm: FormGroup;
   public nameFromInput?: string;
 
-  constructor(private formBuilder: UntypedFormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.simpleInputForm = formBuilder.group({
-      inputName: new UntypedFormControl(''),
+      inputName: new FormControl<string | null>(null),
     });
   }
 

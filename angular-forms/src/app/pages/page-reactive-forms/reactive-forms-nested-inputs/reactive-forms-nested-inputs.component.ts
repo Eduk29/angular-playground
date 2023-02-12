@@ -1,20 +1,16 @@
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-forms-nested-inputs',
   templateUrl: './reactive-forms-nested-inputs.component.html',
   styleUrls: ['./reactive-forms-nested-inputs.component.scss'],
 })
-export class ReactiveFormsNestedInputsComponent implements OnInit {
+export class ReactiveFormsNestedInputsComponent {
   public userForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.userForm = this.createForm(formBuilder);
-  }
-
-  ngOnInit(): void {
-    this.userForm;
   }
 
   public onSubmitAddress(): void {
@@ -23,15 +19,15 @@ export class ReactiveFormsNestedInputsComponent implements OnInit {
 
   private createForm(fb: FormBuilder): FormGroup {
     return fb.group({
-      name: new FormControl(),
-      lastname: new FormControl(),
-      birthday: new FormControl(),
+      name: new FormControl<string | null>(null),
+      lastname: new FormControl<string | null>(null),
+      birthday: new FormControl<string | null>(null),
       address: new FormGroup({
-        street: new FormControl(),
-        number: new FormControl(),
-        state: new FormControl(),
-        country: new FormControl()
-      })
-    })
+        street: new FormControl<string | null>(null),
+        number: new FormControl<number | null>(null),
+        state: new FormControl<string | null>(null),
+        country: new FormControl<string | null>(null),
+      }),
+    });
   }
 }

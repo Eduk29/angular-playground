@@ -10,7 +10,6 @@ import { ReactiveFormsPlaygroudModule } from './pages/page-reactive-forms/reacti
 import { TemplateDrivenFormsModule } from './pages/page-template-driven-forms/template-driven-forms.module';
 import { MastheadModule } from './shared/components/masthead/masthead.module';
 import { PageNavigationLinksModule } from './shared/components/page-navigation-links/page-navigation-links.module';
-import { PasswordValidatorDirective } from './shared/directives/password-validator.directive';
 
 @NgModule({
   declarations: [AppComponent, PageHomeComponent],

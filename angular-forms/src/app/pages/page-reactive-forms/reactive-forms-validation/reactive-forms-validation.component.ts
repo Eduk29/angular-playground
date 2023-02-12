@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 import { phoneValidator } from '../../../shared/validators/phone.validator';
 
@@ -13,26 +19,29 @@ export class ReactiveFormsValidationComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.validationForm = formBuilder.group({
-      name: new FormControl('', [Validators.required, Validators.minLength(4)]),
-      lastname: new FormControl('', [
+      name: new FormControl<string | null>(null, [
         Validators.required,
         Validators.minLength(4),
       ]),
-      birthday: new FormControl(''),
-      age: new FormControl(''),
+      lastname: new FormControl<string | null>(null, [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      birthday: new FormControl<string | null>(''),
+      age: new FormControl<string | null>(''),
       contacts: formBuilder.group(
         {
-          address: new FormControl(''),
-          state: new FormControl(''),
-          city: new FormControl(''),
-          zipCode: new FormControl(''),
-          email: new FormControl(''),
-          phone: new FormControl('', [
+          address: new FormControl<string | null>(''),
+          state: new FormControl<string | null>(''),
+          city: new FormControl<string | null>(''),
+          zipCode: new FormControl<string | null>(''),
+          email: new FormControl<string | null>(''),
+          phone: new FormControl<string | null>('', [
             Validators.required,
             Validators.minLength(10),
             phoneValidator,
           ]),
-          cellphone: new FormControl(''),
+          cellphone: new FormControl<string | null>(''),
         },
         { updateOn: 'blur' }
       ),

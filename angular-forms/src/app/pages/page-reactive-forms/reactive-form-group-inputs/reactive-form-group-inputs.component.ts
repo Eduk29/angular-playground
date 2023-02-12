@@ -1,25 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-group-inputs',
   templateUrl: './reactive-form-group-inputs.component.html',
   styleUrls: ['./reactive-form-group-inputs.component.scss'],
 })
-export class ReactiveFormGroupInputsComponent implements OnInit {
+export class ReactiveFormGroupInputsComponent {
   public groupInputForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.groupInputForm = formBuilder.group({
-      inputName: new FormControl(''),
-      inputLastName: new FormControl(''),
+      inputName: new FormControl<string | null>(''),
+      inputLastName: new FormControl<string | null>(''),
     });
   }
 
-  ngOnInit(): void {}
-
   public formSubmit(): void {
     console.log(this.groupInputForm.value);
-
   }
 }

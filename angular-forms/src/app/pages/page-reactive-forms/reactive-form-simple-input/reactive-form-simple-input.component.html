@@ -2,6 +2,7 @@
   <app-page-title title="Simple Inputs"></app-page-title>
 
   <form class="row align-items-center" [formGroup]="simpleInputForm" (ngSubmit)="formSubmit()">
+
     <mat-form-field class="col-4">
       <mat-label>Name</mat-label>
       <input matInput type="text" placeholder="Enter your name" formControlName="inputName">

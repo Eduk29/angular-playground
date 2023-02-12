@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, AbstractControl } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-simple-input',
@@ -12,7 +17,7 @@ export class ReactiveFormSimpleInputComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.simpleInputForm = formBuilder.group({
-      inputName: new FormControl(''),
+      inputName: new FormControl<string | null>(null),
     });
   }
 
